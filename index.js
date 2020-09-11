@@ -3,6 +3,7 @@
 function run() {
     $('form').submit('#github-handle', event => {
         event.preventDefault();
+        $('.js-content').empty();
         const searchHandle = $('#github-handle').val();
         const githubUrl = `https://api.github.com/users/${searchHandle}/repos`;
         console.log(githubUrl);
@@ -24,6 +25,7 @@ function formatData(responseJson) {
         $('.js-content').append(`
         <h3>${responseJson[i].name}</h3>
         <p><a href="github.com/${responseJson[i].full_name}">${responseJson[i].full_name}</a></p>
+        <hr>
         `) 
     }
 }
