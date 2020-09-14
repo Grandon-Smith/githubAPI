@@ -24,12 +24,13 @@ function formatData(responseJson) {
         console.log(i);
         $('.js-content').append(`
         <h3>${responseJson[i].name}</h3>
-        <p><a href="github.com/${responseJson[i].full_name}">${responseJson[i].full_name}</a></p>
+        <p><a href=${responseJson[i].html_url}>${responseJson[i].full_name}</a></p>
         <hr>
         `) 
     }
 }
 
+//<p><a href="github.com/${responseJson[i].full_name}">${responseJson[i].full_name}</a></p>
 
 // ------------- callback function ----------
 
